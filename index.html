@@ -1,36 +1,41 @@
-<head>
-    <!--
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    -->
-<style>
-    div {
-    width: 40rem;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
+<head>  
+  
+  <title>A place to play - for testing purposes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <script>
+  <link rel="stylesheet" href="css\styles.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@300&family=Sacramento&display=swap" rel="stylesheet">
+    
+    <script>       
+        
         function login() {
-            var u = document.getElementById("username").value;
-            var p = document.getElementById("password").value;
-            alert (u.length <= 8 || p.length <= 8 ? "Password or username\nmust be at least\n8 characters" : "user registered. Welcome, " + u);
+            var u = document.getElementById("email").value;
+            var p = document.getElementById("password").value;                  
+            alert (u.length <= 8 || p.length <= 8 ? "Password or username\n must be at least\n8 characters" : "user registered. Welcome, " + u);
         }
 
         function calcualteInterest() {
-            var sum = parseInt(document.getElementById("sum").value);
-            var interest = sum < 1000 ? 4 : sum > 10000 ? 9 : 7;
-            var interestSum = sum / 100 * interest + sum;
-            document.getElementById("result").innerHTML = "The calcualted sum is: " + interestSum;
+        var sum = parseInt(document.getElementById("sum").value);
+
+        if (isNaN(sum) || sum < 0) {
+            document.getElementById("result").innerHTML = "Invalid input. Please enter a valid non-negative integer.";
+            return;
         }
+
+        var interest = sum < 1000 ? 4 : sum > 10000 ? 9 : 7;
+        var interestSum = sum / 100 * interest + sum;
+        document.getElementById("result").innerHTML = "The calculated sum is: " + interestSum;
+        }     
 
         function calcDeduction() {
             var category = document.getElementById("category").value
@@ -43,45 +48,104 @@
 </head>
 
 <body>
-    <div>
-        <p>1. Boundary value</p>
-        <p>To register, enter a username of at least 8 chars and a password of at least 8 chars</p>
-        <input type="text" id="username" class="form-control">
-        <br>
-        <input type="text" id="password" class="form-control">
-        <br>
-        <input type="submit" id="submit" onclick="login()">
+    <div class="top-container">
+        <button type="button"
+        onclick="document.getElementById('demo').innerHTML = Date()">
+        Click me to display Date and Time.</button>        
+        <p id="demo"></p>
+
+<p id="demo"></p>
+        <img class="right-cloud" src="images\cloud.png" alt="cloud-img">
+        <h1>Let's test!</h1>
+        <img class="left-cloud" src="images\cloud.png" alt="cloud-img">        
+      </div>
+
+    <div class="boundary">
+        <h2>Boundary value</h2>
+        <p>It checks for the input values near the boundary that have a higher chance of error.</p>
+        <p>Every partition has its maximum and minimum values and these maximum and minimum values are the boundary values of a partition.</p>
+        <p>Boundary Value Analysis is also called range checking.</p>
+        <p>Exercise:</p>
+        <ul class="a">
+        <p>Please register by entering an email of at least 8 chars and a password of at least 8 chars</p>
+        </ul>
+        <form>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+              </div>
+              <input type="submit" id="submit" onclick="login()">
+            </form>
+            <p></p>
     </div>
-<hr>
-    <div>
-        <p>2. Equivalence partitioning</p>
+    <div class="equivalence-partitioning">
+        <h2>Equivalence partitioning</h2>
+       
+        <p>It is a software testing technique that divides the input test data of the application under test into each partition at least once of equivalent data from which test cases can be derived.</p>
+        <p></p>
+        <p>Example:</p>
+        <ul class="a">
+            <li>Assume that the application accepts an integer in the range 100 to 999</li>
+            <li>Valid Equivalence Class partition: 100 to 999 inclusive.</li>
+            <li>Non-valid Equivalence Class partitions: less than 100, more than 999, decimal numbers and non-numeric characters.</li>
+        </ul>
+
+        <p></p>
+        <p>Exercise:</p>
+        <ul class="a">
+            <li>For sums of < 1000, interest rate should be 5%</li>
+            <li>For sums between 1000 and 10000, interest rate should be 7%.</li>
+            <li>For sums of > 10000, interest rate should be 9%</li>
+        </ul>
         <div>
-            <p>For sums of < 1000, interest rate should be 5%</p>
-            <p>For sums between 1000 and 10000, interest rate should be 7%</p>
-            <p>For sums of > 10000, interest rate should be 9%</p>
-            <input type ="text" id="sum" class="form-control">
+            
+            <input type ="text" id="sum" class="form-control" placeholder="Enter sum (only numbers)" name="sum">
             <br>
             <input type = "submit" value = "calculate" onclick="calcualteInterest()">
             <p id="result"></p>
         </div>
     </div>
-    <hr>
-    <div>
-        <p>3. Decision table</p>
+    <div class="decision-table">
+        <h2>Decision table</h2>
         <div>
-            <p>Pensioneers and Frenchmen have a 10% deduction</p>
-            <select id="category">
+            <p>A decision table is a scheduled rule logic entry, in table format, that consists of conditions, 
+                represented in the row and column headings, and actions, represented as the intersection points of the conditional cases in the table. </p>
+            <p>It helps to test different combinations of conditions and provides better test coverage for complex business logic.</p>
+            
+            <p></p>
+            <p>Exercise:</p>
+            <ul class="a">
+               <p>Using a decision table tool, please check that all possible conditions, relationships, and constraints are handled by the software under test.</p>
+               <p>Pensioneers and Frenchmen have a 10% deduction:</p>
+            </ul>      
+           <select id="category">
                 <option value="child">child</option>
                 <option value="student">student</option>
                 <option value="employee">employee</option>
                 <option value="pensioneer">pensioneer</option>
             </select>
+            <br>
             <select id = "country">
                 <option value="FR">FR</option>
                 <option value="EN">EN</option>
             </select>
+            <br>
             <input type = "submit" onclick="calcDeduction()">
-            <p id ="deductionResult"></p>
+            <p id ="deductionResult"></p>   
+            <p></p>
         </div>
     </div>
+    <div class="bottom-container">
+        <a class="footer-linkedin" href="https://www.linkedin.com/in/elena-talpalaru-70593b105/">LinkedIn</a>
+        <a class="footer-git" href="https://github.com/ElenaTalpalaru">GitHub</a>
+        <a class="footer-twit" href="https://twitter.com/ElenaTalpalaru">Twitter</a>
+    
+        <p>© 2018 Elena Talpalaru</p>
+      </div>
+      <hr>
+      <hr>
 </body>

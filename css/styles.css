@@ -1,0 +1,106 @@
+body {
+    background-color: #e0ebe8;
+    text-align: center;    
+    font-family: 'Merriweather', serif;
+  }  
+  .top-container {
+    background-color: #c5dfbd;
+    position: relative;
+    padding-top: 100px;
+    box-shadow: 5px 10px rgb(180, 224, 224);
+  }
+  .boundary{
+    border: 1px;
+    position: relative;
+    box-shadow: 5px 10px rgb(180, 224, 224);    
+  }
+  .equivalence-partitioning{
+    border: 1px solid;
+    position: relative;
+    box-shadow: 5px 10px rgb(180, 224, 224);
+  }
+  .decision-table{
+    border: 1px solid;
+    position: relative;
+    box-shadow: 5px 10px rgb(180, 224, 224);
+  }
+  .bottom-container {
+    background-color: #c5dfbd;
+    padding-top: 10px;
+    border: 1px solid;
+    box-shadow: 5px 10px rgb(180, 224, 224);
+    text-align:center;
+  }
+  .form-control {
+    width: 30%;
+    display: block;  /* Make Block type */
+    margin: auto;    
+  }  
+  select {
+    width: 10%;
+    display: block;  /* Make Block type */
+    margin: auto; 
+  }
+  h1 {
+    text-shadow: 2px 2px 5px rgb(0, 255, 42);
+    text-align:center;
+    font-weight: bold;
+    font-family: 'Sacramento';
+    font-size: 4.625rem;
+    color: #5c9b61;
+  }  
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #66BFBF;
+  }  
+  h3 {   
+    font-size: 1.5rem;
+    color: #050808;
+  }
+  p{
+    font-family: Arial, sans-serif;
+  }     
+  .left-cloud {
+    position: absolute;
+    left: 25%;
+    top: 70%;    
+  }  
+  .right-cloud {
+    position: absolute;
+    left: 75%;
+    top: 25%;
+  }
+  .btn {
+    color: #000000;
+    background: #69bf66;
+    padding: 10px;
+  }
+  a {
+    color: #8797ee;
+    font-weight: 900;
+    margin-right: 2.5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  .testing-area-ex {
+    width: 50%;
+    margin: auto;
+  }
+  .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+  }
+  ul {    
+    list-style-type: circle;
+    color: darkblue;
+    display: inline-block;
+   text-align: left;
+  }
+ 
